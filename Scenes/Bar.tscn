@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjb78tj88asrp"]
+
+[ext_resource type="Texture2D" uid="uid://bs0sf7do4lust" path="res://Assets/AngryStamp.png" id="1_24mt1"]
+[ext_resource type="Script" uid="uid://c5ujep3kptqar" path="res://Scripts/Bar.gd" id="1_acx3c"]
+[ext_resource type="Texture2D" uid="uid://dexbpqc74au0r" path="res://Assets/HappyStamp.png" id="3_xmicy"]
+[ext_resource type="Texture2D" uid="uid://84g6x1g2op7i" path="res://Assets/BarLeft.png" id="4_juds8"]
+[ext_resource type="Texture2D" uid="uid://de41cvcgnpgu4" path="res://Assets/BarStep.png" id="5_n62g1"]
+[ext_resource type="Texture2D" uid="uid://dmxxtbwcllgpy" path="res://Assets/BarRight.png" id="6_e3qa5"]
+
+[node name="Bar" type="Node2D"]
+script = ExtResource("1_acx3c")
+progress = 8
+
+[node name="AngryStampNode" type="Node2D" parent="."]
+position = Vector2(-40, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="AngryStampNode"]
+texture = ExtResource("1_24mt1")
+
+[node name="HappyStampNode" type="Node2D" parent="."]
+position = Vector2(440, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="HappyStampNode"]
+texture = ExtResource("3_xmicy")
+
+[node name="BarNode" type="Node2D" parent="."]
+
+[node name="Bar1" type="Sprite2D" parent="BarNode"]
+modulate = Color(0.6509804, 0.8901961, 0.6313726, 1)
+position = Vector2(20, 0)
+texture = ExtResource("4_juds8")
+
+[node name="Bar2" type="Sprite2D" parent="BarNode"]
+modulate = Color(0.6509804, 0.8901961, 0.6313726, 1)
+position = Vector2(60, 0)
+texture = ExtResource("5_n62g1")
+
+[node name="Bar3" type="Sprite2D" parent="BarNode"]
+modulate = Color(0.6509804, 0.8901961, 0.6313726, 1)
+position = Vector2(100, 0)
+texture = ExtResource("5_n62g1")
+
+[node name="Bar4" type="Sprite2D" parent="BarNode"]
+modulate = Color(0.6509804, 0.8901961, 0.6313726, 1)
+position = Vector2(140, 0)
+texture = ExtResource("5_n62g1")
+
+[node name="Bar5" type="Sprite2D" parent="BarNode"]
+modulate = Color(0.6509804, 0.8901961, 0.6313726, 1)
+position = Vector2(180, 0)
+texture = ExtResource("5_n62g1")
+
+[node name="Bar6" type="Sprite2D" parent="BarNode"]
+modulate = Color(0.6509804, 0.8901961, 0.6313726, 1)
+position = Vector2(220, 0)
+texture = ExtResource("5_n62g1")
+
+[node name="Bar7" type="Sprite2D" parent="BarNode"]
+modulate = Color(0.6509804, 0.8901961, 0.6313726, 1)
+position = Vector2(260, 0)
+texture = ExtResource("5_n62g1")
+
+[node name="Bar8" type="Sprite2D" parent="BarNode"]
+modulate = Color(0.6509804, 0.8901961, 0.6313726, 1)
+position = Vector2(300, 0)
+texture = ExtResource("5_n62g1")
+
+[node name="Bar9" type="Sprite2D" parent="BarNode"]
+modulate = Color(0.6509804, 0.8901961, 0.6313726, 1)
+position = Vector2(340, 0)
+texture = ExtResource("5_n62g1")
+
+[node name="Bar10" type="Sprite2D" parent="BarNode"]
+modulate = Color(0.7058824, 0.74509805, 0.99607843, 1)
+position = Vector2(380, 0)
+texture = ExtResource("6_e3qa5")
