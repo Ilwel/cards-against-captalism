@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://bt0ph8lr4dd32"]
+[gd_scene load_steps=10 format=4 uid="uid://bt0ph8lr4dd32"]
 
 [ext_resource type="Texture2D" uid="uid://d00tycocbubke" path="res://Assets/BGTileSet.png" id="1_1feh6"]
 [ext_resource type="PackedScene" uid="uid://cjb78tj88asrp" path="res://Scenes/Bar.tscn" id="1_cctbq"]
 [ext_resource type="PackedScene" uid="uid://cu70ij78j42w8" path="res://Scenes/Indicator.tscn" id="3_4db06"]
 [ext_resource type="Shader" uid="uid://bctiv8y1gh1hc" path="res://Scripts/Ctr.gdshader" id="4_ninor"]
+[ext_resource type="PackedScene" uid="uid://bnxsia3l0nhhq" path="res://Scenes/Card.tscn" id="5_7i352"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4db06"]
 texture = ExtResource("1_1feh6")
@@ -67,3 +68,14 @@ indicator_name = "Capital"
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CTRCanvas"]
 material = SubResource("ShaderMaterial_ninor")
 mesh = SubResource("QuadMesh_4db06")
+
+[node name="Card" parent="." instance=ExtResource("5_7i352")]
+position = Vector2(284, 347)
+
+[node name="Card2" parent="." instance=ExtResource("5_7i352")]
+position = Vector2(345, 348)
+card_name = "2_hearts"
+
+[node name="Card3" parent="." instance=ExtResource("5_7i352")]
+position = Vector2(406, 347)
+card_name = "j_clubs"
