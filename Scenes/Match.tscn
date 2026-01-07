@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://bt0ph8lr4dd32"]
+[gd_scene load_steps=9 format=4 uid="uid://bt0ph8lr4dd32"]
 
 [ext_resource type="Texture2D" uid="uid://d00tycocbubke" path="res://Assets/BGTileSet.png" id="1_1feh6"]
 [ext_resource type="PackedScene" uid="uid://cjb78tj88asrp" path="res://Scenes/Bar.tscn" id="1_cctbq"]
 [ext_resource type="PackedScene" uid="uid://cu70ij78j42w8" path="res://Scenes/Indicator.tscn" id="3_4db06"]
+[ext_resource type="Shader" uid="uid://bctiv8y1gh1hc" path="res://Scripts/Ctr.gdshader" id="4_ninor"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4db06"]
 texture = ExtResource("1_1feh6")
@@ -32,6 +33,13 @@ texture_region_size = Vector2i(32, 18)
 tile_size = Vector2i(32, 18)
 sources/0 = SubResource("TileSetAtlasSource_4db06")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ninor"]
+shader = ExtResource("4_ninor")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4db06"]
+size = Vector2(960, 540)
+center_offset = Vector3(480, 270, 0)
+
 [node name="Match" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -40,17 +48,22 @@ tile_set = SubResource("TileSet_ninor")
 
 [node name="Bar" parent="." instance=ExtResource("1_cctbq")]
 position = Vector2(280, 272)
-progress = 10
 
 [node name="IndicatorNode" parent="." instance=ExtResource("3_4db06")]
 position = Vector2(320, 192)
 
 [node name="IndicatorNode2" parent="." instance=ExtResource("3_4db06")]
 position = Vector2(640, 192)
-animation = "gear"
+animation = "coin"
 indicator_name = "Exploração"
 
 [node name="IndicatorNode3" parent="." instance=ExtResource("3_4db06")]
 position = Vector2(480, 96)
-animation = "coin"
+animation = "gear"
 indicator_name = "Capital"
+
+[node name="CTRCanvas" type="CanvasLayer" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CTRCanvas"]
+material = SubResource("ShaderMaterial_ninor")
+mesh = SubResource("QuadMesh_4db06")

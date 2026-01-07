@@ -9,7 +9,6 @@
 
 [node name="Bar" type="Node2D"]
 script = ExtResource("1_acx3c")
-progress = 8
 
 [node name="AngryStampNode" type="Node2D" parent="."]
 position = Vector2(-40, 0)
@@ -71,6 +70,6 @@ position = Vector2(340, 0)
 texture = ExtResource("5_n62g1")
 
 [node name="Bar10" type="Sprite2D" parent="BarNode"]
-modulate = Color(0.7058824, 0.74509805, 0.99607843, 1)
+modulate = Color(0.6509804, 0.8901961, 0.6313726, 1)
 position = Vector2(380, 0)
 texture = ExtResource("6_e3qa5")

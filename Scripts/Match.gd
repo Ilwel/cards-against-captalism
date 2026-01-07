@@ -1,10 +1,11 @@
+@tool
 extends Node2D
 
 @onready var match_state = {
 	"exploitation":10,
 	"alienation":10,
 	"capital":10,
-	"legitimacy":10
+	"legitimacy":8
 }
 
 func get_exploitation()->int:

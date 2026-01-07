@@ -13,7 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	
+	progress = Match.get_legitimacy()
 	for i in range(10):
 		if progress > i:
 			bars[i].modulate =  Color("#a6e3a1")
