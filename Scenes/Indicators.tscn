@@ -7,19 +7,19 @@
 [node name="IndicatorNode3" parent="." instance=ExtResource("1_5nfag")]
 position = Vector2(108, 0)
 animation = "diamonds"
-indicator_name = "capital"
+indicator_name = "ouros"
 
 [node name="IndicatorNode4" parent="." instance=ExtResource("1_5nfag")]
 position = Vector2(324, 0)
 animation = "clubs"
-indicator_name = "Burocrata"
+indicator_name = "paus"
 
 [node name="IndicatorNode" parent="." instance=ExtResource("1_5nfag")]
 position = Vector2(-324, 0)
 animation = "hearts"
-indicator_name = "propaganda"
+indicator_name = "copas"
 
 [node name="IndicatorNode2" parent="." instance=ExtResource("1_5nfag")]
 position = Vector2(-108, 0)
 animation = "spades"
-indicator_name = "moedor"
+indicator_name = "espadas"
