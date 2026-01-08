@@ -1,11 +1,15 @@
 @tool
 extends Node2D
 
+const DEFAULT_HAND_SIZE = 10
+
 @onready var match_state = {
 	"exploitation":10,
 	"alienation":10,
 	"capital":10,
+	"bureaucracy": 10,
 	"legitimacy":10,
+	"hand_size": DEFAULT_HAND_SIZE,
 	"player_deck": []
 }
 
@@ -31,6 +35,12 @@ func set_alienation(v:int)->void:
 	match_state.alienation = max(v,0)
 	update_legitimacy()
 
+func get_bureaucracy()->int:
+	return match_state.bureaucracy
+
+func set_bureaucracy(v:int)->void:
+	match_state.bureaucracy = max(v,0)
+
 func get_capital()->int:
 	return match_state.capital
 
@@ -39,6 +49,12 @@ func set_capital(v:int)->void:
 
 func get_legitimacy()->int:
 	return match_state.legitimacy
+	
+func set_hand_size(v:int)->void:
+	match_state.hand_size = max(v,0)
+
+func get_hand_size()->int:
+	return match_state.hand_size
 
 func update_legitimacy()->void:
 	var magnitude = (match_state.exploitation + match_state.alienation) * 2
@@ -49,8 +65,10 @@ func get_reaction_points()->int:
 	return match_state.capital / 5
 
 func system_generate()->void:
+	set_bureaucracy(match_state.bureaucracy + match_state.capital / 5)
 	set_exploitation(match_state.exploitation + match_state.alienation / 5)
 	set_capital(match_state.capital + match_state.exploitation / 5)
+	set_hand_size(DEFAULT_HAND_SIZE - match_state.bureaucracy / 5)
 
 func system_balance()->void:
 	var pr:int = get_reaction_points()
@@ -81,6 +99,7 @@ func system_turn()->void:
 	system_balance()
 	
 func _ready() -> void:
+	set_hand_size(DEFAULT_HAND_SIZE - match_state.bureaucracy / 5)
 	load_player_deck()
 	randomize()
 	match_state.player_deck.shuffle()

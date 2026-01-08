@@ -30,7 +30,7 @@ func _value_to_int(v:String)->int:
 func sort_hand_suits()->void:
 	var cards = get_children()
 	
-	var suit_order = ["spades","diamonds","clubs","hearts"]
+	var suit_order = ["clubs","diamonds","spades","hearts"]
 	
 	cards.sort_custom(func(a,b):
 		var sa = a.card_name.split("_")
@@ -90,5 +90,5 @@ func update_card_transform(card, target_pos: Vector2) -> Tween:
 	return tween
 
 func _ready() -> void:
-	await draw_n(8)
+	await draw_n(Match.get_hand_size())
 	sort_hand_rank()

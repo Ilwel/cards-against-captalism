@@ -1,13 +1,38 @@
-[gd_scene load_steps=63 format=3 uid="uid://cu70ij78j42w8"]
+[gd_scene load_steps=70 format=3 uid="uid://cu70ij78j42w8"]
 
 [ext_resource type="Texture2D" uid="uid://bashfkxcxekis" path="res://Assets/TVSPriteAnimation.png" id="1_2cpsx"]
 [ext_resource type="Script" uid="uid://brykdcemj132g" path="res://Scripts/Indicator.gd" id="1_adgnf"]
 [ext_resource type="Texture2D" uid="uid://ny1qte567xnp" path="res://Assets/CoinSpriteAnimation.png" id="2_5tslg"]
+[ext_resource type="Texture2D" uid="uid://dhqubb74kwudx" path="res://Assets/Bureaucracy - Clubs.png" id="2_fmoe2"]
 [ext_resource type="Texture2D" uid="uid://dyumwwe2ma3xy" path="res://Assets/GearSpriteAnimation.png" id="2_vo4a1"]
 [ext_resource type="Texture2D" uid="uid://cjavrbd828ck1" path="res://Assets/Capital - Diamonds.png" id="3_vypae"]
 [ext_resource type="Texture2D" uid="uid://c2uxrcdks0pdo" path="res://Assets/Propaganda - Hearts.png" id="4_whx4p"]
 [ext_resource type="Texture2D" uid="uid://cppegh0vxf7sh" path="res://Assets/Máquino - Spades.png" id="6_txs5e"]
 [ext_resource type="FontFile" uid="uid://bnufkl36qskqa" path="res://Assets/Silkscreen-Regular.ttf" id="6_whx4p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kk1d"]
+atlas = ExtResource("2_fmoe2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st6po"]
+atlas = ExtResource("2_fmoe2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yunqg"]
+atlas = ExtResource("2_fmoe2")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sieyf"]
+atlas = ExtResource("2_fmoe2")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0q6h"]
+atlas = ExtResource("2_fmoe2")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ljxi"]
+atlas = ExtResource("2_fmoe2")
+region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6dvp8"]
 atlas = ExtResource("2_5tslg")
@@ -225,6 +250,29 @@ region = Rect2(448, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5kk1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st6po")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yunqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sieyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0q6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ljxi")
+}],
+"loop": true,
+"name": &"clubs",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6dvp8")
 }, {
 "duration": 1.0,
@@ -417,26 +465,27 @@ animations = [{
 script = ExtResource("1_adgnf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-32, 1)
 sprite_frames = SubResource("SpriteFrames_vypae")
-animation = &"diamonds"
+animation = &"clubs"
 
 [node name="IndicatorNameLbl" type="Label" parent="."]
-offset_left = -61.0
+offset_left = -63.0
 offset_top = 28.0
-offset_right = 61.0
+offset_right = 63.0
 offset_bottom = 51.0
 theme_override_colors/font_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
 theme_override_fonts/font = ExtResource("6_whx4p")
 theme_override_font_sizes/font_size = 16
-text = "Propaganda"
+text = "o mecanismo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
-offset_left = -11.0
-offset_top = -61.0
-offset_right = 11.0
-offset_bottom = -38.0
+offset_left = 29.0
+offset_top = -14.0
+offset_right = 51.0
+offset_bottom = 9.0
 theme_override_colors/font_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
 theme_override_fonts/font = ExtResource("6_whx4p")
 theme_override_font_sizes/font_size = 16
