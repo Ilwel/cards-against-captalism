@@ -1,5 +1,5 @@
 @tool
-extends Node
+class_name Card extends Node2D
 
 @export var card_name = "ace_hearts"
 @onready var card_sprite = $Sprite2D
@@ -7,7 +7,6 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var card_path = "res://Assets/Deck/%s.png"  % card_name
-	print(card_path)
 	card_sprite.texture = load(card_path)
 
 

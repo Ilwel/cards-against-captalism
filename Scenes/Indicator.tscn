@@ -152,12 +152,12 @@ animation = &"coin"
 
 [node name="IndicatorNameLbl" type="Label" parent="."]
 offset_left = -47.0
-offset_top = -47.0
-offset_right = 47.0
-offset_bottom = -24.0
+offset_top = -59.0
+offset_right = 53.0
+offset_bottom = -36.0
 theme_override_colors/font_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
 theme_override_fonts/font = ExtResource("2_adgnf")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 20
 text = "Exploração"
 horizontal_alignment = 1
 vertical_alignment = 1

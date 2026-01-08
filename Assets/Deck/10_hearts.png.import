@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8babiukcu0hk"
-path="res://.godot/imported/row-2-column-1.png-0e5ec8af2ed12038319ab819720d6311.ctex"
+uid="uid://bq51yi7ndmbd"
+path="res://.godot/imported/10_hearts.png-b35b2fe3605e844097ddf4349669fcf3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Deck/lines/row-2-column-1.png"
-dest_files=["res://.godot/imported/row-2-column-1.png-0e5ec8af2ed12038319ab819720d6311.ctex"]
+source_file="res://Assets/Deck/10_hearts.png"
+dest_files=["res://.godot/imported/10_hearts.png-b35b2fe3605e844097ddf4349669fcf3.ctex"]
 
 [params]
 

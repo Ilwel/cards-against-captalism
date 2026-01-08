@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dljy2kebsnr40"]
+
+[ext_resource type="PackedScene" uid="uid://cu70ij78j42w8" path="res://Scenes/Indicator.tscn" id="1_5nfag"]
+
+[node name="Indicators" type="Node2D"]
+
+[node name="IndicatorNode3" parent="." instance=ExtResource("1_5nfag")]
+animation = "gear"
+indicator_name = "Capital"
+
+[node name="IndicatorNode" parent="." instance=ExtResource("1_5nfag")]
+position = Vector2(-216, 0)
+
+[node name="IndicatorNode2" parent="." instance=ExtResource("1_5nfag")]
+position = Vector2(216, 0)
+animation = "coin"
+indicator_name = "Exploração"

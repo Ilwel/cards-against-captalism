@@ -5,8 +5,17 @@ extends Node2D
 	"exploitation":10,
 	"alienation":10,
 	"capital":10,
-	"legitimacy":8
+	"legitimacy":10,
+	"player_deck": []
 }
+
+func load_player_deck(path:String = "res://Assets/DataDecks/player_deck.json")->void:
+	var file = FileAccess.open(path,FileAccess.READ)
+	var data = JSON.parse_string(file.get_as_text())
+	match_state.player_deck = data.deck.duplicate()
+
+func get_player_deck() -> Array:
+	return match_state.player_deck
 
 func get_exploitation()->int:
 	return match_state.exploitation
@@ -70,3 +79,8 @@ func system_balance()->void:
 func system_turn()->void:
 	system_generate()
 	system_balance()
+	
+func _ready() -> void:
+	load_player_deck()
+	randomize()
+	match_state.player_deck.shuffle()

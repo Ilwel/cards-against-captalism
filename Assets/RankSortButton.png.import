@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7p6r7xjq3nye"
-path="res://.godot/imported/row-1-column-1.png-1102a3cfb0346591b8eb93d52e52bbf6.ctex"
+uid="uid://dqv63fttf273y"
+path="res://.godot/imported/RankSortButton.png-ff99e2f42cc20e44719194b8f6444fbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Deck/lines/row-1-column-1.png"
-dest_files=["res://.godot/imported/row-1-column-1.png-1102a3cfb0346591b8eb93d52e52bbf6.ctex"]
+source_file="res://Assets/RankSortButton.png"
+dest_files=["res://.godot/imported/RankSortButton.png-ff99e2f42cc20e44719194b8f6444fbf.ctex"]
 
 [params]
 
