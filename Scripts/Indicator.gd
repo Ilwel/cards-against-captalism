@@ -11,8 +11,6 @@ func _ready() -> void:
 	animation_sprite.play(animation)
 	indicator_name_lbl.text = indicator_name
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if animation == "hearts":

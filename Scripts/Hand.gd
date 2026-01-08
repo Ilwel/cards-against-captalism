@@ -7,12 +7,25 @@ const ROW_Y: float = 550
 
 var CardScene = preload("res://Scenes/Card.tscn")
 
+var highligh_cards = []
+
 func add_card(card_id) -> void:
 	var card: Card = CardScene.instantiate()
 	card.card_name = card_id
 	add_child(card)
 	reposition_cards()
-	
+
+func connect_card_signals(card: Card):
+	card.connect('click', on_card_click.bind(card))	
+
+func on_card_click(card:Card):
+	if highligh_cards.has(card):
+		var card_index = highligh_cards.find(card)
+		highligh_cards.remove_at(card_index)
+	else:
+		highligh_cards.push_back(card)
+	reposition_cards()
+
 func draw_n(n: int):
 	var deck = Match.get_player_deck()
 	for i in range(n):
@@ -78,8 +91,10 @@ func reposition_cards() -> void:
 
 	for i in range(get_children().size()):
 		var card = get_children()[i]
-		print(card.card_name)
-		var target_pos := Vector2(start_x + i * (CARD_WIDTH + CARD_GAP), ROW_Y)
+		var target_y = ROW_Y
+		if highligh_cards.has(card):
+			target_y -= 64
+		var target_pos := Vector2(start_x + i * (CARD_WIDTH + CARD_GAP), target_y)
 		update_card_transform(card, target_pos)
 
 func update_card_transform(card, target_pos: Vector2) -> Tween:
