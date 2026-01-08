@@ -7,6 +7,8 @@ const ROW_Y: float = 550
 
 var CardScene = preload("res://Scenes/Card.tscn")
 
+var pulling_cards = false
+
 var highligh_cards = []
 
 func add_card(card_id) -> void:
@@ -22,16 +24,18 @@ func on_card_click(card:Card):
 	if highligh_cards.has(card):
 		var card_index = highligh_cards.find(card)
 		highligh_cards.remove_at(card_index)
-	else:
+	elif not pulling_cards:
 		highligh_cards.push_back(card)
 	reposition_cards()
 
 func draw_n(n: int):
+	pulling_cards = true
 	var deck = Match.get_player_deck()
 	for i in range(n):
 		var card_id = deck.pop_back()
 		add_card(card_id)
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.1).timeout
+	pulling_cards = false
 		
 func _value_to_int(v:String)->int:
 	if v == "ace": return 14
