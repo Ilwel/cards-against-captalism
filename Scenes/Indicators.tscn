@@ -5,13 +5,15 @@
 [node name="Indicators" type="Node2D"]
 
 [node name="IndicatorNode3" parent="." instance=ExtResource("1_5nfag")]
-animation = "gear"
+animation = "diamonds"
 indicator_name = "Capital"
 
 [node name="IndicatorNode" parent="." instance=ExtResource("1_5nfag")]
 position = Vector2(-216, 0)
+animation = "hearts"
+indicator_name = "Propaganda"
 
 [node name="IndicatorNode2" parent="." instance=ExtResource("1_5nfag")]
 position = Vector2(216, 0)
-animation = "coin"
-indicator_name = "Exploração"
+animation = "spades"
+indicator_name = "Máquino"

@@ -15,10 +15,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if animation == "noise":
+	if animation == "hearts":
 		value_lbl.text  = str(Match.get_alienation())
-	elif animation == "gear":
+	elif animation == "spades":
 		value_lbl.text  = str(Match.get_exploitation())
-	elif animation == "coin":
+	elif animation == "diamonds":
 		value_lbl.text  = str(Match.get_capital())
 		

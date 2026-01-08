@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d00tycocbubke" path="res://Assets/BGTileSet.png" id="1_1feh6"]
 [ext_resource type="PackedScene" uid="uid://cjb78tj88asrp" path="res://Scenes/Bar.tscn" id="1_cctbq"]
-[ext_resource type="PackedScene" uid="uid://dljy2kebsnr40" path="res://Scenes/indicators.tscn" id="3_g7nuy"]
+[ext_resource type="PackedScene" uid="uid://dljy2kebsnr40" path="res://Scenes/Indicators.tscn" id="3_g7nuy"]
 [ext_resource type="Shader" uid="uid://bctiv8y1gh1hc" path="res://Scripts/Ctr.gdshader" id="4_ninor"]
 [ext_resource type="PackedScene" uid="uid://b2h30dduhdmuf" path="res://Scenes/Hand.tscn" id="5_7i352"]
 [ext_resource type="PackedScene" uid="uid://dkb2g1v1nay2k" path="res://Scenes/SortButton.tscn" id="6_fjt5i"]
@@ -52,7 +52,7 @@ tile_set = SubResource("TileSet_ninor")
 position = Vector2(540, 320)
 
 [node name="Indicators" parent="." instance=ExtResource("3_g7nuy")]
-position = Vector2(540, 240)
+position = Vector2(540, 200)
 
 [node name="CTRCanvas" type="CanvasLayer" parent="."]
 
