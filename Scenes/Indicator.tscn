@@ -412,7 +412,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"hearts",
-"speed": 4.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -467,7 +467,7 @@ script = ExtResource("1_adgnf")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-32, 1)
 sprite_frames = SubResource("SpriteFrames_vypae")
-animation = &"clubs"
+animation = &"hearts"
 
 [node name="IndicatorNameLbl" type="Label" parent="."]
 offset_left = -63.0
