@@ -1,7 +1,7 @@
 shader_type canvas_item;
 render_mode unshaded, skip_vertex_transform;
 
-const float curvature = 9.0;
+const float curvature = 7.0;
 const float vignette_mul = 0.1;
 
 uniform sampler2D screen_texture: hint_screen_texture;

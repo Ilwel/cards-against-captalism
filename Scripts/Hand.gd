@@ -3,13 +3,28 @@ extends Node2D
 
 const CARD_WIDTH: float = 96
 const CARD_GAP: float = 8
-const ROW_Y: float = 550      
+const ROW_Y: float = 550     
+
+var last_sort = "rank" 
 
 var CardScene = preload("res://Scenes/Card.tscn")
 
 var pulling_cards = false
 
-var highligh_cards = []
+var highlight_cards = []
+
+func discard_highlights():
+	for card in highlight_cards:
+		update_card_transform(card, Vector2(2000, card.global_position.y))
+		await get_tree().create_timer(0.05).timeout
+		remove_child(card)
+	reposition_cards()
+	await draw_n(highlight_cards.size())
+	highlight_cards = []
+	if last_sort == 'rank':
+		sort_hand_rank()
+	else:
+		sort_hand_suits()
 
 func add_card(card_id) -> void:
 	var card: Card = CardScene.instantiate()
@@ -21,11 +36,11 @@ func connect_card_signals(card: Card):
 	card.connect('click', on_card_click.bind(card))	
 
 func on_card_click(card:Card):
-	if highligh_cards.has(card):
-		var card_index = highligh_cards.find(card)
-		highligh_cards.remove_at(card_index)
+	if highlight_cards.has(card):
+		var card_index = highlight_cards.find(card)
+		highlight_cards.remove_at(card_index)
 	elif not pulling_cards:
-		highligh_cards.push_back(card)
+		highlight_cards.push_back(card)
 	reposition_cards()
 
 func draw_n(n: int):
@@ -66,7 +81,9 @@ func sort_hand_suits()->void:
 	
 	for c in cards:
 		move_child(c,get_child_count()-1)
+	highlight_cards = []
 	reposition_cards()
+	last_sort = 'suits'
 	
 func sort_hand_rank()->void:
 	var cards = get_children()
@@ -79,7 +96,9 @@ func sort_hand_rank()->void:
 	
 	for c in cards:
 		move_child(c,get_child_count()-1)
+	highlight_cards = []
 	reposition_cards()
+	last_sort = 'rank'
 
 func _calc_start_x(count:int)->float:
 	var screen_w := get_viewport_rect().size.x
@@ -96,7 +115,7 @@ func reposition_cards() -> void:
 	for i in range(get_children().size()):
 		var card = get_children()[i]
 		var target_y = ROW_Y
-		if highligh_cards.has(card):
+		if highlight_cards.has(card):
 			target_y -= 64
 		var target_pos := Vector2(start_x + i * (CARD_WIDTH + CARD_GAP), target_y)
 		update_card_transform(card, target_pos)
@@ -111,3 +130,18 @@ func update_card_transform(card, target_pos: Vector2) -> Tween:
 func _ready() -> void:
 	await draw_n(Match.get_hand_size())
 	sort_hand_rank()
+
+
+func _on_button_pressed() -> void:
+	if highlight_cards.size() > 0:
+		discard_highlights()
+
+
+func _on_button_3_pressed() -> void:
+	sort_hand_suits()
+	last_sort = "suits"
+
+
+func _on_button_4_pressed() -> void:
+	sort_hand_rank()
+	last_sort = "rank"

@@ -1,11 +1,14 @@
-[gd_scene load_steps=11 format=4 uid="uid://bt0ph8lr4dd32"]
+[gd_scene load_steps=17 format=4 uid="uid://bt0ph8lr4dd32"]
 
 [ext_resource type="Texture2D" uid="uid://d00tycocbubke" path="res://Assets/BGTileSet.png" id="1_1feh6"]
 [ext_resource type="PackedScene" uid="uid://cjb78tj88asrp" path="res://Scenes/Bar.tscn" id="1_cctbq"]
 [ext_resource type="PackedScene" uid="uid://dljy2kebsnr40" path="res://Scenes/Indicators.tscn" id="3_g7nuy"]
 [ext_resource type="Shader" uid="uid://bctiv8y1gh1hc" path="res://Scripts/Ctr.gdshader" id="4_ninor"]
 [ext_resource type="PackedScene" uid="uid://b2h30dduhdmuf" path="res://Scenes/Hand.tscn" id="5_7i352"]
-[ext_resource type="PackedScene" uid="uid://dkb2g1v1nay2k" path="res://Scenes/SortButton.tscn" id="6_fjt5i"]
+[ext_resource type="FontFile" uid="uid://bnufkl36qskqa" path="res://Assets/Silkscreen-Regular.ttf" id="7_7qcfw"]
+[ext_resource type="Texture2D" uid="uid://bug7cno60ll6i" path="res://Assets/Button.png" id="7_fjt5i"]
+[ext_resource type="Texture2D" uid="uid://c35fqp48wy043" path="res://Assets/SuitsSortButton.png" id="8_7qcfw"]
+[ext_resource type="Texture2D" uid="uid://dqv63fttf273y" path="res://Assets/RankSortButton.png" id="9_csn1e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4db06"]
 texture = ExtResource("1_1feh6")
@@ -42,6 +45,15 @@ shader = ExtResource("4_ninor")
 size = Vector2(1080, 720)
 center_offset = Vector3(540, 360, 0)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7qcfw"]
+texture = ExtResource("7_fjt5i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_csn1e"]
+texture = ExtResource("8_7qcfw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x3o1l"]
+texture = ExtResource("9_csn1e")
+
 [node name="Match" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -63,11 +75,60 @@ mesh = SubResource("QuadMesh_4db06")
 [node name="Hand" parent="." instance=ExtResource("5_7i352")]
 position = Vector2(540, 384)
 
-[node name="SuitSort" parent="." node_paths=PackedStringArray("hand") instance=ExtResource("6_fjt5i")]
-position = Vector2(448, 672)
-hand = NodePath("../Hand")
+[node name="Button" type="Button" parent="."]
+offset_left = 296.0
+offset_top = 648.0
+offset_right = 388.0
+offset_bottom = 696.0
+theme_override_colors/font_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_colors/font_focus_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_colors/font_pressed_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_colors/font_hover_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_fonts/font = ExtResource("7_7qcfw")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_7qcfw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7qcfw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7qcfw")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7qcfw")
+text = "Descartar"
 
-[node name="RankSort" parent="." node_paths=PackedStringArray("hand") instance=ExtResource("6_fjt5i")]
-position = Vector2(624, 672)
-type = 1
-hand = NodePath("../Hand")
+[node name="Button2" type="Button" parent="."]
+offset_left = 684.0
+offset_top = 648.0
+offset_right = 776.0
+offset_bottom = 696.0
+theme_override_colors/font_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_colors/font_focus_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_colors/font_pressed_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_colors/font_hover_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_fonts/font = ExtResource("7_7qcfw")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_7qcfw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7qcfw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7qcfw")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7qcfw")
+text = "Jogar"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 404.0
+offset_top = 648.0
+offset_right = 496.0
+offset_bottom = 696.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_csn1e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_csn1e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_csn1e")
+theme_override_styles/focus = SubResource("StyleBoxTexture_csn1e")
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 576.0
+offset_top = 648.0
+offset_right = 668.0
+offset_bottom = 696.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_x3o1l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x3o1l")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x3o1l")
+theme_override_styles/focus = SubResource("StyleBoxTexture_x3o1l")
+
+[connection signal="pressed" from="Button" to="Hand" method="_on_button_pressed"]
+[connection signal="pressed" from="Button3" to="Hand" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="Hand" method="_on_button_4_pressed"]
