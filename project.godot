@@ -19,10 +19,11 @@ config/icon="res://icon.svg"
 
 Globals="*res://Scripts/Globals.gd"
 Match="*res://Scripts/Match.gd"
+PokerHelper="*res://Scripts/PokerHelper.gd"
 
 [display]
 
-window/size/viewport_width=1080
+window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/mode=3
 window/stretch/mode="viewport"

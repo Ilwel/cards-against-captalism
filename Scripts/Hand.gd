@@ -39,7 +39,7 @@ func on_card_click(card:Card):
 	if highlight_cards.has(card):
 		var card_index = highlight_cards.find(card)
 		highlight_cards.remove_at(card_index)
-	elif not pulling_cards:
+	elif not pulling_cards and highlight_cards.size() < 5:
 		highlight_cards.push_back(card)
 	reposition_cards()
 
@@ -131,6 +131,10 @@ func _ready() -> void:
 	await draw_n(Match.get_hand_size())
 	sort_hand_rank()
 
+func _process(_delta: float) -> void:
+	if(highlight_cards.size() > 0):
+		var hand = PokerHelper.evaluate_best_hand(highlight_cards)
+		print(hand)
 
 func _on_button_pressed() -> void:
 	if highlight_cards.size() > 0:

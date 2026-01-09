@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgs5wh2gnv5ml"]
+
+[ext_resource type="FontFile" uid="uid://bnufkl36qskqa" path="res://Assets/Silkscreen-Regular.ttf" id="1_14t0v"]
+[ext_resource type="Texture2D" uid="uid://bug7cno60ll6i" path="res://Assets/Button.png" id="2_b0kp0"]
+[ext_resource type="Texture2D" uid="uid://c35fqp48wy043" path="res://Assets/SuitsSortButton.png" id="3_vl8b5"]
+[ext_resource type="Texture2D" uid="uid://dqv63fttf273y" path="res://Assets/RankSortButton.png" id="4_aopes"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7qcfw"]
+texture = ExtResource("2_b0kp0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_csn1e"]
+texture = ExtResource("3_vl8b5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x3o1l"]
+texture = ExtResource("4_aopes")
+
+[node name="Buttons" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 296.0
+offset_top = 648.0
+offset_right = 388.0
+offset_bottom = 696.0
+theme_override_colors/font_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_colors/font_focus_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_colors/font_pressed_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_colors/font_hover_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_fonts/font = ExtResource("1_14t0v")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_7qcfw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7qcfw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7qcfw")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7qcfw")
+text = "Descartar"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 684.0
+offset_top = 648.0
+offset_right = 776.0
+offset_bottom = 696.0
+theme_override_colors/font_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_colors/font_focus_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_colors/font_pressed_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_colors/font_hover_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+theme_override_fonts/font = ExtResource("1_14t0v")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_7qcfw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7qcfw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7qcfw")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7qcfw")
+text = "Jogar"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 404.0
+offset_top = 648.0
+offset_right = 496.0
+offset_bottom = 696.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_csn1e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_csn1e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_csn1e")
+theme_override_styles/focus = SubResource("StyleBoxTexture_csn1e")
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 576.0
+offset_top = 648.0
+offset_right = 668.0
+offset_bottom = 696.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_x3o1l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x3o1l")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x3o1l")
+theme_override_styles/focus = SubResource("StyleBoxTexture_x3o1l")
